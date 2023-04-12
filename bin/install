@@ -1,0 +1,14 @@
+#/bin/bash
+set -Eeu pipefail
+set -x
+
+read -p "Are you currently in a virtual environment? (y/n): " proceed
+
+if [ "$proceed" = "y" ]; then
+    pip install --upgrade pip setuptools wheel
+    pip install -r requirements.txt
+    pip install -e .
+
+else
+    echo "Please activate your virtual environment and try again."
+fi
