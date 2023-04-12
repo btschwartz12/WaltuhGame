@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "WaltuhGame"
+version = "1.0.0"
+dependencies = [
+
+]
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["WaltuhGame"]

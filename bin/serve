@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Serve wsgi:app with gunicorn on port 8000
+gunicorn --bind localhost:8000 wsgi:app --daemon --name waltuh

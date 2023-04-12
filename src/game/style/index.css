@@ -1,0 +1,290 @@
+:root {
+    --main-color: darkslateblue;
+    --background-color: #eee;
+    --border-color: gainsboro;
+    --game-background-color: gainsboro;
+    --game-background-image: url("../src/grass.gif");
+    --font-color: white;
+    --danger-color: red;
+    --level-color: red;
+    --score-color: red;
+    --score-num-color: red;
+    --button-background-color: darkslateblue;
+    --button-border-color: black;
+    --button-font-color: white;
+    --settings-background-color: darkslateblue;
+    --settings-border-color: white;
+    --settings-font-color: white;
+    --slider-background-color: #d3d3d3;
+    --slider-fill-color: opacity(0.7);
+    --game-over-background-color: darkslateblue;
+    --game-over-color: white;
+  }
+  
+  body,
+  button {
+      font-family: 'Western', sans-serif;
+  }
+  button {
+      font-size: xx-large;
+  }
+  .outer-container {
+      height: 720px;
+      width: 1280px;
+      background: var(--background-color);
+      border: 5px solid var(--border-color);
+  }
+  .game-window {
+      height: 720px;
+      width: 1280px;
+      float: left;
+      position: absolute;
+      background-color: var(--game-background-color);
+      background-image: var(--game-background-image);
+      background-size: 1280px 720px;
+      overflow: hidden;
+  }
+  #actual_game {
+      height: 720px;
+      width: 1280px;
+      background-color: white;
+      background-size: cover;
+      background-image: var(--game-background-image);
+      z-index: 10;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: none;
+  }
+  #game_right_section {
+      height: 600px;
+      width: 320px;
+      position: absolute;
+      left: 960px;
+      top: 0;
+      color: var(--font-color);
+      z-index: 1;
+  }
+  #danger,
+  #level,
+  #scoreword {
+      text-align: center;
+      font-size: 30px;
+      color: var(--font-color);
+  }
+  #danger_num,
+  #level_num,
+  #score_num {
+      text-align: center;
+      font-size: 35px;
+      color: var(--score-num-color);
+  }
+  #bull_img {
+      position: absolute;
+      width: 30px;
+      left: 600px;
+      top: 300px;
+      z-index: 9;
+  }
+  .curBull {
+      position: absolute;
+      height: 42px;
+      width: 42px;
+      z-index: 9;
+      right: 0;
+      top: 0;
+  }
+  #curSheep,
+  #curCape,
+  .game_object {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+  }
+  .curBull img {
+      position: relative;
+      z-index: 10;
+      height: 80px;
+      left: -17px;
+      top: -15px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+  
+  /* Add your css below */
+  #main_menu {
+      text-align: center;
+  }
+  #menu_header {
+    margin: 0 0 80px;
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-color);
+    border-bottom: 6px;
+    border-bottom-style: groove;
+    font-size: 100px;
+    color: var(--font-color);
+}
+/*  */
+#bull_left {
+    height: 100px;
+    content: url("../src/running-bull-right.png");
+    float: left;
+}
+/*  */
+#bull_right {
+    height: 100px;
+    content: url("../src/running-bull-left.png");
+    float: right;
+}
+/*  */
+#main_buttons {
+    margin: 0 auto;
+    display: block;
+}
+/*  */
+.main_button {
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    color: var(--button-font-color);
+    border: 3px solid var(--button-border-color);
+    background-color: var(--button-background-color);
+}
+/*  */
+#settings_header {
+    width: 100%;
+    font-size: 50px;
+    margin: 0;
+    color: var(--font-color);
+}
+/*  */
+#settings {
+    /* positioning */
+    top: 2%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    display: none;
+    /* end positioning */
+    width: 600px;
+    height: 690px;
+    background-color: var(--settings-background-color);
+    border: 3px solid var(--settings-border-color);
+}
+
+/*  */
+#slider {
+    background: var(--slider-background-color);
+    outline: none;
+    transition: opacity 0.2s;
+    opacity: var(--slider-fill-color);
+    width: 75%;
+    height: 25px;
+}
+
+
+#settings_close_button {
+    width: 180px;
+    height: 100px;
+    color: var(--font-color);
+    font-size: 40px;
+    background-color: var(--main-color);
+    border: 3px solid var(--button-border-color);
+}
+
+.difficulty {
+    width: 190px;
+    height: 100px;
+    background-color: var(--main-color);
+    border: 2px solid var(--button-border-color);
+    color: var(--font-color);
+    font-size: 45px;
+}
+
+.chosen_difficulty {
+    outline: 3px solid yellow;
+}
+
+#splash_screen {
+    margin: 185px auto;
+    text-align: center;
+    display: block;
+}
+
+#splash_screen_main {
+    font-size: 75px;
+}
+
+#splash_screen_text {
+    font-size: 50px;
+}
+
+#game_over_menu {
+    text-align: center;
+    margin: 150px auto auto;
+    padding-top: 5px;
+    padding-bottom: 3%;
+    width: 700px;
+    font-size: 30px;
+    display: none;
+    background-color: var(--game-over-background-color);
+    color: var(--game-over-color);
+}
+
+#game_over_button {
+    background-color: sienna;
+    color: white;
+    font-size: xxx-large;
+}
+
+#tutorial {
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+    display: none;
+}
+
+#tutorial_title {
+    font-size: 75px;
+    margin: 0;
+}
+
+#tutorial_img {
+    width: 100px;
+    height: 100px;
+}
+
+#tutorial_text {
+    margin: 20px;
+}
+
+#tutorial_button { 
+    width: 200px;
+    height: 75px;
+}
+
+#twentyfive_margin {
+    margin: 25px;
+}
+
+#fortyfive_margin {
+    margin: 45px;
+}
+
+#ninty_margin { 
+    margin: 90px;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .game-window {
+        background-image: url("../src/grass-still.png");
+    }
+    #actual_game {
+        background-image: url("../src/grass-still.png");
+    }
+}
+

@@ -1,0 +1,36 @@
+{
+    "name": "Brewing Java",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "./src/chrome/background.js",
+        "type": "module"
+    },
+    "action":{
+        "default_popup": "./src/start/index.html",
+        "default_title": "Brewing Java"
+    },
+    "permissions": [ "tabs" ],
+    "host_permissions": [
+        "https://umich.instructure.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://umich.instructure.com/*"],
+            "js": ["./src/chrome/content.js"]
+        }
+    ],
+    "icons": { "16": "icon128.png",
+           "48": "icon128.png",
+          "128": "icon128.png" },
+    "web_accessible_resources": [
+        {
+            "matches": ["<all_urls>"],
+            "resources": [
+                "./src/bored-api/*",
+                "./src/home/*",
+                "./src/game/*"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<title>Dodge Bull</title>
+<script src=scripts/jquery.min.js></script>
+<script src=scripts/page.js></script>
+<link href=style/index.css rel=stylesheet>
+<link href="https://fonts.cdnfonts.com/css/western" rel="stylesheet">
+
+<div class=outer-container>
+    <div class=game-window>
+        <!-- Main Menu -->
+        <div id=main_menu>
+            <h1 id=menu_header>
+                <img id="bull_left"> 
+                DodgeBull 
+                <img id="bull_right">
+            </h1>
+
+                    <div id="game_over_menu">
+                        <p>GAME OVER!</p>
+                        <p>You Managed to Save <span id="final_level"></span> Sheep</p>
+                        <p>Final Score <span id="final_score"></span></p>
+                        <button id="game_over_button">Start Over</button>
+                    </div>
+                    <div id="main_buttons">
+                        <button id="play_button" class="main_button">Play game!</button>
+                        <div id="fortyfive_margin"></div>
+                        <button id="settings_menu" class="main_button">Settings</button>
+                        <div id="fortyfive_margin"></div>
+                        <button id="toggle_theme" class="main_button">Toggle Theme</button>
+                        <div id="fortyfive_margin"></div>
+                        <span id="current_theme" style="background-color: white;">Current Theme: Default</span>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div id="settings">
+                    <h2 id="settings_header">
+                        <b>Settings</b>
+                    </h2>
+
+                    <div id="ninty_margin"></div>
+
+                    <h2 id="settings_header" class="vol_input">
+                        <b>Volume: </b><span id="volume">50</span>
+                    </h2>
+
+                    <div id="twentyfive_margin"></div>
+
+                    <div id="volume-control">
+                        <input id="slider" type="range" min="1" max="100" value="50">
+                    </div>
+
+                    <div id="fortyfive_margin"></div>
+
+                
+                    <h2 id="settings_header">
+                        <b>Difficulty</b>
+                    </h2>
+
+                    <div id="twentyfive_margin"></div>
+
+                    <div>
+                        <button id="easy" class="difficulty">Easy</button> 
+                        <button id="normal" class="difficulty chosen_difficulty">Normal</button> 
+                        <button id="hard" class="difficulty">Hard</button>
+                    </div>
+                    
+                    <div id="ninty_margin"></div>
+
+                    <button id="settings_close_button">Close</button></div>
+
+                <!-- Tutorial -->
+                <div id="tutorial">
+                    <h1 id="tutorial_title">
+                        <b>The Bulls Have Escaped their Pen!!!</b>
+                    </h1>
+                    <p id="tutorial_text">
+                        <b>Avoid</b> <em>the Charging Bulls</em>!
+                    </p>
+                    <img id="tutorial_img" src=./src/running-bull-left.png>
+
+                    <p id="tutorial_text">
+                        <b>Collect</b> the <em>Red Cape</em> to <b>Dodge</b> the <b>Bulls.</b> <b>Save</b> your <em>Sheep</em> to get to the next level!
+                    </p>
+                    <img id="tutorial_img" src=./src/red_cape.png> 
+                    <img id="tutorial_img" src=./src/sheep.png>
+                    <p id="tutorial_text">
+                        <b>Gain</b> as many <em>points</em> as possible!
+                    </p>
+                    <button id="tutorial_button">Start</button>
+                </div>
+                
+                <!-- Actual Game -->
+                <div id=actual_game>
+            
+                    <div class=bullSection>
+                        <div>
+                            <img id='bull_img'/>
+                        </div>
+                        <div class=curBull></div>
+                        <div id=curSheep></div> 
+                        <div id=curCape></div>
+                        <div id=splash_screen>
+                            <h1 id=splash_screen_main><strong>Get Ready!</strong></h1><img src=./src/arrowkeys.png>
+                            <p id=splash_screen_text>Use arrow keys to move.</div>
+                    </div>
+                    <div id=game_right_section>
+                        <div id=scoreword>SCORE
+                            <div id=score_num></div>
+                        </div>
+                        <div id=danger>DANGER
+                            <div id=danger_num></div>
+                        </div>
+                        <div id=level>SHEEP SAVED
+                            <div id=level_num></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

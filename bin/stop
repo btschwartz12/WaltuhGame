@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Use pgrep to determine if gunicorn is running, and if so, kill it
+pkill -f 'gunicorn.*waltuh'
