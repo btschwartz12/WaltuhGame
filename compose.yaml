@@ -4,7 +4,7 @@ services:
     build:
       context: ./WaltuhGame
     ports:
-      - ${WALTUH_SERVER_PORT:-8000}:8000
+      - ${WALTUH_SERVER_PORT}:8000
     volumes:
       - ./build:/app/build
     command: gunicorn -w 1 -b 0.0.0.0:8000 app:app 
