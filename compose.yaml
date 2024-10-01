@@ -1,15 +1,15 @@
 services:
-  server:
-    container_name: waltuh-game
+  waltuh:
     build:
       context: ./WaltuhGame
+      dockerfile: Dockerfile
     volumes:
       - ./build:/app/build
     command: gunicorn -w 1 -b 0.0.0.0:8000 app:app 
+    networks:
+      - site_network
 
-  cloudflared:
-    restart: unless-stopped
-    image: cloudflare/cloudflared:latest
-    command: tunnel run
-    environment:
-      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+networks:
+  site_network:
+    external: true
+
